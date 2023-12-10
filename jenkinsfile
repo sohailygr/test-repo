@@ -1,15 +1,13 @@
 pipeline{
     agent any
-    stages{
-        stage(action1){
-            steps{
-                script{
-                    sh """
-                    echo "testing"
-                    echo "Branch: ${BRANCH_NAME}"
-                    """
+     stages {
+        stage('Print Environment Variables') {
+            steps {
+                script {
+                    env.each { key, value ->
+                        echo "${key}=${value}"
+                    }
                 }
             }
         }
-    }
 }
