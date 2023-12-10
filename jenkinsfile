@@ -2,12 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Run on Main Branch') {
+        stage('Run on test-repo Branch') {
             when {
                 expression { env.BRANCH_NAME == 'test-repo' }
             }
             steps {
-                echo 'This stage runs only on the main branch'
+                echo 'This stage runs only on the test-repo branch'
                 // Add your stage-specific steps here
             }
         }
