@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('run on branch true){
+        stage('run on branch true'){
             when {
                     beforeAgent true
                     expression { env.BRANCH_IS_PRIMARY }
