@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Run on Main Branch') {
             when {
-                expression { env.BRANCH_NAME == 'main' }
+                expression { env.BRANCH_NAME == 'test-repo' }
             }
             steps {
                 echo 'This stage runs only on the main branch'
