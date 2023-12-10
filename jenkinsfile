@@ -1,0 +1,15 @@
+pipeline{
+    agent any
+    stages{
+        stage(action1){
+            steps{
+                script{
+                    sh """
+                    echo "testing"
+                    echo "Branch: ${BRANCH_NAME}"
+                    """
+                }
+            }
+        }
+    }
+}
