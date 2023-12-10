@@ -2,6 +2,15 @@ pipeline {
     agent any
 
     stages {
+        stage('run on branch true){
+            when {
+                    beforeAgent true
+                    expression { env.BRANCH_IS_PRIMARY }
+                }
+             steps {
+                exho 'This stage runs on main branch'
+}
+}
         stage('Run on test1 Branch') {
             when {
                 expression { env.BRANCH_NAME == 'test1' }
