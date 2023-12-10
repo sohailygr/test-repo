@@ -1,14 +1,16 @@
-pipeline{
+pipeline {
     agent any
-     stages {
-        stage('Print Environment Variables') {
+
+    stages {
+        stage('Print Branch Name') {
             steps {
                 script {
-                    env.each { key, value ->
-                        echo "${key}=${value}"
-                    }
+                    def branchName = env.BRANCH_NAME ?: "Not available"
+                    echo "Building on branch: ${branchName}"
                 }
             }
         }
+
+        // Add more stages as needed
     }
 }
